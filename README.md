@@ -1,3 +1,5 @@
+I've tried to add blocking for groups, however have not testet it yet.
+
 # Unseen extension for Firefox
 
 ![Screenshot of Facebook's 'seen' status](http://i45.tinypic.com/2yv44r7.png)
