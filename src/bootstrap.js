@@ -13,13 +13,14 @@ function httpObserve() {
 httpObserve.prototype = {
     registerTopic:      "http-on-modify-request",
     facebookReadStatusUrl: /http(s)?:\/\/(www.)?facebook.com\/ajax\/mercury\/change_read_status.php(\?(.)+)?/,
+    facebookGroupStatusUrl : /http(s)?:\/\/(www.)?facebook.com\/ajax\/ufi\/seen_tooltip.php(\?(.)+)?/,
 
     observe: function(subject, topic, data) {
         if (topic == this.registerTopic) {
             subject.QueryInterface(Components.interfaces.nsIHttpChannel);
             var url = subject.URI.spec;
 
-            if (this.facebookReadStatusUrl.test(url)) {
+            if (this.facebookReadStatusUrl.test(url) || this.facebookGroupStatusUrl.test(url)) {
                 subject.cancel(Components.results.NS_BINDING_ABORTED);
             }
         }

@@ -1,3 +1,5 @@
+I've tried to add blocking for groups, however have not testet it yet.
+
 # Unseen extension for Firefox
 
 **Note** 
